@@ -4,5 +4,11 @@
     "env": {
       "NEXT_PUBLIC_BASE_PATH": "/gutcheck"
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/gutcheck/:path*",
+      "destination": "/:path*"
+    }
+  ]
 }
