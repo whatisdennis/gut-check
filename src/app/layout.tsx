@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
-const SITE_URL = "https://dennisdelgado.com";
+const SITE_URL = "https://www.dennisdelgado.com";
 const PUBLIC_PATH = "/gutcheck";
 // Next does NOT prefix metadata URLs (canonical, og:url) with basePath, so we
 // always point them at the full public path. Asset URLs (og:image, chunks) are
