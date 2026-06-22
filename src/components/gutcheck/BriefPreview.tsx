@@ -6,14 +6,12 @@ import { type Answers } from "@/lib/engine";
 const PREVIEW_KEYS = [
   "name",
   "oneliner",
-  "who",
   "problem",
   "success",
-  "mvp",
-  "notv1",
   "risk",
   "primaryuser",
   "musthave",
+  "outofscope",
 ];
 
 export function BriefPreview({ answers }: { answers: Answers }) {

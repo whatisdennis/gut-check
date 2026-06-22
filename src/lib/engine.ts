@@ -75,9 +75,9 @@ export function runReality(answers: Answers, ptype: ProductType): Risk[] {
   const out: Risk[] = [];
   const a = (k: string) => (answers[k] || "").trim();
 
-  if (!a("notv1"))
+  if (!a("outofscope"))
     out.push({ h: "You have not named anything to cut from v1.", t: "Everything-in-v1 is the top reason small projects never ship. Move three tempting features into Later this week." });
-  if (/\beveryone\b/i.test(a("who")))
+  if (/\beveryone\b/i.test(a("primaryuser")))
     out.push({ h: "“Everyone” is not a user.", t: "Narrow to the one person who feels this most, and build the next ten decisions around them." });
   if (VANITY.test(a("success")))
     out.push({ h: "That measures curiosity, not value.", t: "Swap your success number for a repeat-behavior number you can watch in weeks." });
@@ -109,12 +109,12 @@ export function buildMarkdown(answers: Answers, ptype: ProductType): string {
   (
     [
       ["What it is", "oneliner"],
-      ["Who it is for", "who"],
-      ["Problem and today", "problem"],
+      ["Who it is for", "primaryuser"],
+      ["The problem", "problem"],
       ["Why now", "whynow"],
       ["Success", "success"],
-      ["Simplest v1", "mvp"],
-      ["Not in v1", "notv1"],
+      ["Simplest v1", "musthave"],
+      ["Not in v1", "outofscope"],
       ["Biggest risk", "risk"],
     ] as [string, string][]
   ).forEach(([label, key]) => L.push("", `**${label}:** ${a(key)}`));

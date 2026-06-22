@@ -37,26 +37,23 @@ export const FIELDS: Record<string, Field> = {
   // Section 1 - The one-pager (spine)
   name: { q: "What is the working name?", tip: "A working name is fine. You can rename it later.", eg: "FridgePilot", input: "text" },
   oneliner: { q: "In one sentence, what is it?", tip: "If you cannot say it in one sentence, you do not understand it yet. This line becomes your pitch and your landing-page headline.", eg: "A mobile app that helps busy home cooks decide what to make for dinner from a photo of their fridge." },
-  who: { q: "Who is it for? Be specific.", tip: "“Everyone” means no one. The narrower the person, the sharper every later decision.", eg: "Home cooks 25 to 40 who shop without a plan and freeze up at 6pm. Not chefs, not meal-preppers." },
-  problem: { q: "What problem does it solve, and what do they do today?", tip: "What they do today is your real competitor. “Nothing” is a warning sign, not a green light.", eg: "The 6pm what-is-for-dinner stall. Today they scroll recipe apps and order takeout." },
+  problem: { q: "What problem does it solve?", tip: "Name the pain sharply. “Nothing” as a problem is a warning sign, not a green light.", eg: "The 6pm what-is-for-dinner stall." },
   whynow: { q: "Why this, and why now?", tip: "Strong ideas have a reason they could not have worked two years ago, and a reason to act this year.", eg: "Cheap phone vision models can now name ingredients from one photo. Grocery prices are up." },
   success: { q: "What does success look like? One or two plain numbers.", tip: "If you cannot name the number, you will explain away bad results later. Pick something measurable in weeks.", eg: "200 people use it twice in week one, 30 percent return the next week. Not downloads." },
-  mvp: { q: "What is the simplest first version?", tip: "The smallest thing that proves the core idea. If you cannot ship it in a few weeks, it is two ideas wearing a trench coat.", eg: "Photo in, three recipes out. No accounts, no history." },
-  notv1: { q: "What is explicitly NOT in version one?", tip: "Naming what you skip protects your scope from the tempting extras that turn a 3-week build into a 3-month one.", eg: "No meal calendar, no grocery delivery, no Android at launch." },
   risk: { q: "Biggest risk, the one thing that sinks this if it is wrong?", tip: "Better written down than pretended away. This feeds your reality check, and it is usually the thing to test first.", eg: "That ingredient recognition is accurate enough to trust." },
 
   // Section 2 - The users
-  primaryuser: { q: "Who is your primary user, and what does a normal day look like?", tip: "People do not want software. They want an outcome.", eg: "A working parent who gets home tired and feeds the family from whatever is in the fridge." },
+  primaryuser: { q: "Who is your primary user, and what does a normal day look like? Be specific.", tip: "“Everyone” means no one. Narrow to the one person who feels this most, then build every later decision around their day. They want an outcome, not software.", eg: "Home cooks 25 to 40 who shop without a plan and freeze up at 6pm, not chefs or meal-preppers. A working parent who gets home tired and feeds the family from whatever is in the fridge." },
   goal: { q: "What are they actually trying to accomplish?", tip: "The outcome, not the feature.", eg: "Get a good-enough dinner on the table fast, without another grocery run." },
   workaround: { q: "How do they handle this today?", tip: "Email, a spreadsheet, a competitor, or nothing? “Nothing” is a flag.", eg: "Googling recipes with chicken and rice, or defaulting to takeout." },
-  secondary: { q: "Any secondary users?", tip: "Admins, approvers, viewers, partners.", eg: "None for v1.", optional: true },
+  secondary: { q: "Any secondary users?", tip: "Other people who use it day to day: admins, viewers, teammates, partners. Not whoever pays for it.", eg: "None for v1.", optional: true },
   story: { q: "Walk through one real moment.", tip: "One paragraph often does more than a feature list.", eg: "Maria gets home at 6, snaps a photo, gets three recipes, and is cooking in two minutes.", optional: true },
 
   // Section 3 - What it needs to do
-  musthave: { q: "Must have: what can v1 not ship without? (one per line)", tip: "If this list is over 5 to 7, a v2 is hiding in your v1.", eg: "As a user, I can photograph my fridge and get 3 cookable recipes." },
+  musthave: { q: "Must have: what is the simplest first version that proves the core idea? (one per line)", tip: "The smallest set that proves the idea. If this list is over 5 to 7, a v2 is hiding in your v1.", eg: "As a user, I can photograph my fridge and get 3 cookable recipes." },
   shouldhave: { q: "Should have: important, but v1 survives without it.", tip: "Real, but not launch-blocking.", eg: "Filter by cuisine. Save a recipe." },
   later: { q: "Later / nice to have: parked on purpose.", tip: "Park them so they stop haunting your scope.", eg: "Shopping list for missing items. A meal calendar." },
-  outofscope: { q: "Out of scope: deliberately not building.", tip: "Saying no on purpose is a feature.", eg: "Grocery delivery. A social feed. Calorie tracking." },
+  outofscope: { q: "Out of scope: deliberately not building.", tip: "Naming what you skip protects your scope from the tempting extras that turn a 3-week build into a 3-month one. Saying no on purpose is a feature.", eg: "Grocery delivery. A social feed. Calorie tracking." },
 
   // Section 4 - How it should feel and work
   flow: { q: "Walk the main path, start to finish. (numbered steps)", tip: "The happy path in plain steps.", eg: "1. Open app. 2. Snap photo. 3. Confirm ingredients. 4. See 3 recipes. 5. Cook." },
@@ -86,7 +83,7 @@ export const FIELDS: Record<string, Field> = {
   // SaaS module
   s_pricing: { q: "How do you charge, and per what? Seat, usage, or flat?", tip: "Your pricing model shapes who buys and how you grow. Decide the unit before you argue about the number.", eg: "$5 a month flat, unlimited use. Single-user, so no per-seat pricing." },
   s_activation: { q: "What is the first real moment of value, and how fast can a new user reach it?", tip: "If people do not feel value in the first session, no feature list saves you. Time-to-value is the metric.", eg: "The first recipe cooked from a fridge photo, in under two minutes from sign-up." },
-  s_buyer: { q: "Who approves the purchase, and are they the same person who uses it?", tip: "In SaaS the buyer and the user are often different people who need different things. Know both.", eg: "Same person for the consumer app. For a future family plan, one household lead pays for everyone." },
+  s_buyer: { q: "Who controls the budget and signs off on paying, and are they the person who actually uses it?", tip: "In SaaS the economic buyer and the daily user are often different people with different needs. This is about who pays, not who else logs in.", eg: "Same person for the consumer app. For a future family plan, one household lead pays for everyone." },
   s_retention: { q: "Why would they still be paying in six months?", tip: "New SaaS lives or dies on retention, not signups. Name the reason the habit sticks.", eg: "It saves a real decision every weeknight, and saved recipes plus history make switching annoying." },
   s_integrations: { q: "What must it plug into to fit their existing workflow?", tip: "Software that does not fit the tools people already use gets abandoned, however good it is.", eg: "The phone camera roll and a grocery app. Calendar sync later." },
 
@@ -126,7 +123,7 @@ export const FIELDS: Record<string, Field> = {
   p_data: { q: "What happens to their data if they leave, and does that build or break trust?", tip: "Lock-in by hostage rarely works. Easy export can paradoxically increase trust and retention.", eg: "One-tap export of all saved recipes to markdown, so they trust putting data in." },
 
   // Educational module
-  e_payer: { q: "Who actually pays, the learner, a parent, or a school?", tip: "In education the user and the buyer are often different, with different motives. Serve the payer without losing the learner.", eg: "The home cook learns and the home cook pays. No parent or institution in the loop for v1." },
+  e_payer: { q: "Who actually funds it, the learner, a parent, or a school?", tip: "In education the payer and the learner are often different, with different motives. This is about who writes the cheque, not who else is in the room. Serve the payer without losing the learner.", eg: "The home cook learns and the home cook pays. No parent or institution in the loop for v1." },
   e_outcome: { q: "Are you measuring time-in-app or actual learning?", tip: "Engagement metrics flatter edtech and hide whether anyone learned anything. Decide the real outcome.", eg: "Can they cook three new dishes from memory after a month, not minutes spent in the app." },
   e_motivation: { q: "What keeps a learner going after the motivation honeymoon ends?", tip: "Most learners quit. Streaks, wins, and stakes matter more than content quality.", eg: "Small weekly wins, a visible skill tree, and a real dinner on the table as the reward." },
   e_credibility: { q: "Why should anyone trust your content is correct and worth their time?", tip: "Bad educational content is worse than none. Name the source of authority.", eg: "Recipes tested by a real chef, with sources, not AI guesses presented as fact." },
@@ -201,7 +198,7 @@ export const DETECT: Partial<Record<ProductType, string[]>> = {
 };
 
 export const SPINE_SECTIONS: { sec: string; rows: string[][] }[] = [
-  { sec: "Section 1 · The one-pager", rows: [["name", "oneliner", "who"], ["problem", "whynow", "success"], ["mvp", "notv1", "risk"]] },
+  { sec: "Section 1 · The one-pager", rows: [["name", "oneliner", "problem"], ["whynow", "success", "risk"]] },
   { sec: "Section 2 · The users", rows: [["primaryuser", "goal", "workaround"], ["secondary", "story"]] },
   { sec: "Section 3 · What it needs to do", rows: [["musthave", "shouldhave", "later"], ["outofscope"]] },
   { sec: "Section 4 · How it should feel and work", rows: [["flow", "feel", "platform"], ["connect"]] },

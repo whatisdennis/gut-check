@@ -9,6 +9,7 @@ import { Welcome } from "./Welcome";
 import { Interview } from "./Interview";
 import { RealityCheck } from "./RealityCheck";
 import { ExportScreen } from "./ExportScreen";
+import { ShareButton } from "./ShareButton";
 import { TextSizeToggle, type TextSize } from "./TextSizeToggle";
 
 const ZOOM: Record<TextSize, number> = { base: 1, large: 1.15, xl: 1.3 };
@@ -61,13 +62,16 @@ export function GutCheck() {
 
   return (
     <>
-      <a
-        href="https://dennisdelgado.com"
-        className="fixed left-3 top-3 z-50 inline-flex h-10 items-center gap-1.5 rounded-full border border-outline-variant bg-surface-container-lowest px-3.5 text-[13px] font-medium text-on-surface-variant shadow-m3-1 transition-colors hover:bg-surface-container-high hover:text-on-surface"
-      >
-        <ArrowLeft className="size-4" aria-hidden="true" />
-        dennisdelgado.com
-      </a>
+      <div className="fixed left-3 top-3 z-50 flex items-center gap-2">
+        <a
+          href="https://dennisdelgado.com"
+          className="inline-flex h-10 items-center gap-1.5 rounded-full border border-outline-variant bg-surface-container-lowest px-3.5 text-[13px] font-medium text-on-surface-variant shadow-m3-1 transition-colors hover:bg-surface-container-high hover:text-on-surface"
+        >
+          <ArrowLeft className="size-4" aria-hidden="true" />
+          <span className="hidden sm:inline">dennisdelgado.com</span>
+        </a>
+        <ShareButton />
+      </div>
       <TextSizeToggle value={textSize} onChange={setTextSize} />
       <main
         style={mainStyle}
